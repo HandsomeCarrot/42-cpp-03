@@ -147,3 +147,4 @@ std::ostream	&operator<<(std::ostream &os, ClapTrap const &ct)
 	os << "ClapTrap " << ct.getName();
 	return (os);
 }
+
