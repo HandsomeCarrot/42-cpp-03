@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/01 18:43:15 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/01 19:04:42 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 # include <string>
+# include <iostream>
 
 class ClapTrap
 {
@@ -25,9 +26,9 @@ private:
 	unsigned int	m_energyPoints;
 	unsigned int	m_attackDamage;
 
-	void	setHitPoints(unsigned int amount) const;
-	void	setEnergyPoints(unsigned int amount) const;
-	void	setAttackDamage(unsigned int amount) const;
+	void	setHitPoints(unsigned int amount);
+	void	setEnergyPoints(unsigned int amount);
+	void	setAttackDamage(unsigned int amount);
 
 public:
 
@@ -41,17 +42,18 @@ public:
 	unsigned int	getEnergyPoints(void) const;
 	unsigned int	getAttackDamage(void) const;
 
-	void	setName(std::string &name) const;
+	void	setName(std::string name);
 
 	ClapTrap	&operator=(ClapTrap const &other);
 
-	void	attack(std::string const &target) const;
-	void	takeDamage(unsigned int amount) const;
-	void	beRepaired(unsigned int amount) const;
+	void	attack(std::string const &target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 
-	bool	dead(void);
-	bool	outOfMana(void);
-	bool	canTakeAction(void);
+	bool	dead(void) const;
+	bool	outOfMana(void) const;
+
+	bool	takeAction(void);
 };
 
 std::ostream	&operator<<(std::ostream &os, ClapTrap const &ct);

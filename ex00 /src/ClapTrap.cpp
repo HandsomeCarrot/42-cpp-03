@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/01 18:51:49 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/01 19:07:37 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,22 @@ unsigned int	ClapTrap::getAttackDamage(void) const
 	return (m_attackDamage);
 }
 
-void	ClapTrap::setName(std::string &name) const
+void	ClapTrap::setName(std::string name)
 {
 	m_name = name;
 }
 
-void	ClapTrap::setHitPoints(unsigned int amount) const
+void	ClapTrap::setHitPoints(unsigned int amount)
 {
 	m_hitPoints = amount;
 }
 
-void	ClapTrap::setEnergyPoints(unsigned int amount) const
+void	ClapTrap::setEnergyPoints(unsigned int amount)
 {
 	m_energyPoints = amount;
 }
 
-void	ClapTrap::setAttackDamage(unsigned int amount) const
+void	ClapTrap::setAttackDamage(unsigned int amount)
 {
 	m_attackDamage = amount;
 }
@@ -75,23 +75,21 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
 	return (*this);
 }
 
-void	ClapTrap::attack(std::string const &target) const
+void	ClapTrap::attack(std::string const &target)
 {
 	unsigned int	attackDamage = this->getAttackDamage();
 
-	if (!this->canTakeAction())
+	if (!this->takeAction())
 		return;
 	std::cout << this
 	<< " attacks " << target
 	<< ", causing " << attackDamage
 	<< " points of damage!" << std::endl;
-	target.takeDamage(attackDamage);
-	this->setEnergyPoints(energyPoints - 1);
 }
 
-void	ClapTrap::takeDamage(unsigned int amount) const
+void	ClapTrap::takeDamage(unsigned int amount)
 {
-	unsigned int	healthPoints = getHealthPoints();
+	unsigned int	healthPoints = getHitPoints();
 
 	std::cout << this;
 
@@ -99,36 +97,36 @@ void	ClapTrap::takeDamage(unsigned int amount) const
 		return;
 	else if (amount >= healthPoints)
 		amount = healthPoints;
-	setHealthPoints(healthPoints - amount);
+	setHitPoints(healthPoints - amount);
 	std::cout << " took " << amount
 	<< " points of damage and now has "
-	<< getHealthPoints() << " health points!" << std::endl;
+	<< getHitPoints() << " health points!" << std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) const
+void	ClapTrap::beRepaired(unsigned int amount)
 {
-	unsigned int	healthPoints = getHealthPoints();
+	unsigned int	healthPoints = getHitPoints();
 
 	std::cout << this;
 
-	if (!canTakeAction())
+	if (!takeAction())
 		return;
 	healthPoints += amount;
-	setHealthPoints(healthPoints);
+	setHitPoints(healthPoints);
 	std::cout << this << " got repaired for "
 	<< amount << " health points and now has "
 	<< healthPoints << " health points!" << std::endl;
 }
 
-bool	ClapTrap::dead(void)
+bool	ClapTrap::dead(void) const
 {
-	if (getHealthPoints() > 0)
+	if (getHitPoints() > 0)
 		return (false);
 	std::cout << this << " is already dead." << std::endl;
 	return (true);
 }
 
-bool	ClapTrap::outOfMana(void)
+bool	ClapTrap::outOfMana(void) const
 {
 	if (getEnergyPoints() > 0)
 		return (false);
@@ -136,10 +134,12 @@ bool	ClapTrap::outOfMana(void)
 	return (true);
 }
 
-bool	ClapTrap::canTakeAction(void)
+bool	ClapTrap::takeAction(void)
 {
 	if (dead() || outOfMana())
 		return (false);
+
+	setEnergyPoints(getEnergyPoints() - 1);
 	return (true);
 }
 
