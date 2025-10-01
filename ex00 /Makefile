@@ -6,7 +6,7 @@
 #    By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 13:18:37 by vpoka             #+#    #+#              #
-#    Updated: 2025/10/01 16:46:49 by vpoka            ###   ########.fr        #
+#    Updated: 2025/10/01 19:08:12 by vpoka            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ COMP = $(CXX) $(CXXFLAGS) $(INCLUDE)
 
 S = src
 SRCS =	$(addprefix $(S)/, \
-		main.cpp)
+		main.cpp \
+		ClapTrap.cpp)
 
 B = build
 OBJS = $(SRCS:$(S)/%.cpp=$(B)/%.o)
