@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/01 19:07:37 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/01 19:11:13 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,6 @@ bool	ClapTrap::takeAction(void)
 {
 	if (dead() || outOfMana())
 		return (false);
-
 	setEnergyPoints(getEnergyPoints() - 1);
 	return (true);
 }
