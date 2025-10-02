@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/01 19:09:49 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/02 16:04:20 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ public:
 
 	ClapTrap(void);
 	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &other);
 
 	~ClapTrap(void);
+
+	ClapTrap	&operator=(ClapTrap const &other);
 
 	std::string		getName(void) const;
 	unsigned int	getHitPoints(void) const;
@@ -43,8 +46,6 @@ public:
 	unsigned int	getAttackDamage(void) const;
 
 	void	setName(std::string name);
-
-	ClapTrap	&operator=(ClapTrap const &other);
 
 	void	attack(std::string const &target);
 	void	takeDamage(unsigned int amount);

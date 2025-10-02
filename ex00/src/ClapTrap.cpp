@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 11:27:50 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/02 16:07:43 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,38 @@ ClapTrap::ClapTrap(void) :
 	m_hitPoints(10),
 	m_energyPoints(10),
 	m_attackDamage(0)
-{}
+{
+	std::cout << "constructed " << *this << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) :
 	m_name(name),
 	m_hitPoints(10),
 	m_energyPoints(10),
 	m_attackDamage(0)
-{}
+{
+	std::cout << "constructed " << *this << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &other) :
+	m_name(other.getName()),
+	m_hitPoints(10),
+	m_energyPoints(10),
+	m_attackDamage(0)
+{
+	std::cout << "copy constructed " << *this << std::endl;
+}
 
 ClapTrap::~ClapTrap(void)
-{}
+{
+	std::cout << "deconstructed " << *this << std::endl;
+}
+
+ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
+{
+	this->setName(other.getName());
+	return (*this);
+}
 
 std::string	ClapTrap::getName(void) const
 {
@@ -67,12 +88,6 @@ void	ClapTrap::setEnergyPoints(unsigned int amount)
 void	ClapTrap::setAttackDamage(unsigned int amount)
 {
 	m_attackDamage = amount;
-}
-
-ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
-{
-	this->setName(other.getName());
-	return (*this);
 }
 
 void	ClapTrap::attack(std::string const &target)
