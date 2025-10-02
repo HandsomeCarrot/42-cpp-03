@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 16:04:20 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:09:36 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 
 	ClapTrap(void);
 	ClapTrap(std::string name);
+	ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 	ClapTrap(ClapTrap const &other);
 
 	~ClapTrap(void);

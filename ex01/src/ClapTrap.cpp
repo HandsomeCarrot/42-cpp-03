@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 16:46:41 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/02 17:14:31 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,38 @@ ClapTrap::ClapTrap(std::string name) :
 }
 
 /**
- * @brief Constructs a ClapTrap object as a copy of another ClapTrap.
+ * @brief Constructs a ClapTrap object with the specified attributes.
  *
- * Initializes a new ClapTrap instance by copying the name from the
- * provided ClapTrap object, and setting 10 hit points, 10 energy
- * points, and 0 attack damage. Outputs a copy construction message
- * to standard output.
+ * Initializes the ClapTrap with a given name, hit points, energy points, and attack damage.
+ * Outputs a message to the standard output indicating the construction of the object.
  *
- * @param other A constant reference to the ClapTrap object to copy
- *              from.
+ * @param name The name of the ClapTrap.
+ * @param hitPoints The initial hit points of the ClapTrap.
+ * @param energyPoints The initial energy points of the ClapTrap.
+ * @param attackDamage The attack damage value of the ClapTrap.
+ */
+ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) :
+	m_name(name),
+	m_hitPoints(hitPoints),
+	m_energyPoints(energyPoints),
+	m_attackDamage(attackDamage)
+{
+	std::cout << "constructed " << *this << std::endl;
+}
+
+/**
+ * @brief Copy constructor for the ClapTrap class.
+ *
+ * Creates a new ClapTrap object as a copy of an existing one.
+ * Copies the name, hit points, energy points, and attack damage from the source object.
+ *
+ * @param other The ClapTrap object to copy from.
  */
 ClapTrap::ClapTrap(ClapTrap const &other) :
 	m_name(other.getName()),
-	m_hitPoints(10),
-	m_energyPoints(10),
-	m_attackDamage(0)
+	m_hitPoints(other.getHitPoints()),
+	m_energyPoints(other.getEnergyPoints()),
+	m_attackDamage(other.getAttackDamage())
 {
 	std::cout << "copy constructed " << *this << std::endl;
 }
@@ -79,19 +96,20 @@ ClapTrap::~ClapTrap(void)
 }
 
 /**
- * @brief Assigns the values of another ClapTrap to this ClapTrap.
+ * @brief Assignment operator overload for ClapTrap.
  *
- * Copies the name from the provided ClapTrap object to this instance.
- * Other attributes (hit points, energy points, attack damage) are not
- * modified during assignment.
+ * Copies the state of another ClapTrap object into this one by assigning
+ * the name, hit points, energy points, and attack damage from the source object.
  *
- * @param other A constant reference to the ClapTrap object to copy
- *              from.
- * @return A reference to this ClapTrap object after assignment.
+ * @param other The ClapTrap object to copy from.
+ * @return Reference to the assigned ClapTrap object (*this).
  */
 ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
 {
 	this->setName(other.getName());
+	this->setHitPoints(other.getHitPoints());
+	this->setEnergyPoints(other.getEnergyPoints());
+	this->setAttackDamage(other.getAttackDamage());
 	return (*this);
 }
 
