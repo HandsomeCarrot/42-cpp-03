@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/01 19:11:13 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/02 11:21:45 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ClapTrap::attack(std::string const &target)
 
 	if (!this->takeAction())
 		return;
-	std::cout << this
+	std::cout << *this
 	<< " attacks " << target
 	<< ", causing " << attackDamage
 	<< " points of damage!" << std::endl;
@@ -91,15 +91,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	healthPoints = getHitPoints();
 
-	std::cout << this;
-
 	if (dead())
 		return;
 	else if (amount >= healthPoints)
 		amount = healthPoints;
 	setHitPoints(healthPoints - amount);
-	std::cout << " took " << amount
-	<< " points of damage and now has "
+	std::cout << *this << " took "
+	<< amount << " points of damage and now has "
 	<< getHitPoints() << " health points!" << std::endl;
 }
 
@@ -107,13 +105,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	unsigned int	healthPoints = getHitPoints();
 
-	std::cout << this;
-
 	if (!takeAction())
 		return;
 	healthPoints += amount;
 	setHitPoints(healthPoints);
-	std::cout << this << " got repaired for "
+	std::cout << *this << " got repaired for "
 	<< amount << " health points and now has "
 	<< healthPoints << " health points!" << std::endl;
 }
@@ -122,7 +118,7 @@ bool	ClapTrap::dead(void) const
 {
 	if (getHitPoints() > 0)
 		return (false);
-	std::cout << this << " is already dead." << std::endl;
+	std::cout << *this << " is already dead." << std::endl;
 	return (true);
 }
 
@@ -130,7 +126,7 @@ bool	ClapTrap::outOfMana(void) const
 {
 	if (getEnergyPoints() > 0)
 		return (false);
-	std::cout << this << " is out of energy points!" << std::endl;
+	std::cout << *this << " is out of energy points!" << std::endl;
 	return (true);
 }
 
