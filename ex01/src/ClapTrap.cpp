@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 17:14:31 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 12:59:59 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 	if (!takeAction())
 		return;
-	healthPoints += amount;
+	if (healthPoints + amount < amount)
+		healthPoints = UINT_MAX;
+	else
+		healthPoints += amount;
 	setHitPoints(healthPoints);
 	std::cout << *this << " got repaired for "
 	<< amount << " health points and has "

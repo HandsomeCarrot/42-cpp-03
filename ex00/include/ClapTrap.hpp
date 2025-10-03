@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 17:09:36 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 13:18:39 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <climits>
 
 class ClapTrap
 {
