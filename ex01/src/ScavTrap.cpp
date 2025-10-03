@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:21 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 12:30:27 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 12:44:23 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ ScavTrap::ScavTrap(ScavTrap const &other) :
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "deconstructed " << *this << std::endl;
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	unsigned int	attackDamage = this->getAttackDamage();
+
+	if (!this->takeAction())
+		return;
+	std::cout << *this
+	<< " attacks " << target
+	<< ", causing " << attackDamage
+	<< " points of damage!" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, ScavTrap const &st)

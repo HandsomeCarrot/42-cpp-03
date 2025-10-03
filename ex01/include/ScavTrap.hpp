@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:38 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 12:26:59 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 12:44:14 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ public:
 	ScavTrap(ScavTrap const &other);
 
 	~ScavTrap(void);
+
+	void	attack(std::string const &target);
 };
 
 std::ostream	&operator<<(std::ostream &os, ScavTrap const &st);
