@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:06:48 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 14:07:39 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 14:15:19 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,19 @@
 
 class FragTrap : public ClapTrap
 {
+private:
+public:
 
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
+	FragTrap(FragTrap const &other);
+
+	~FragTrap(void);
+
+	void	highFivesGuys(void);
 };
+
+std::ostream	&operator<<(std::ostream &os, FragTrap const &st);
 
 #endif
