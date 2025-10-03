@@ -6,8 +6,43 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:21 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 16:55:34 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 12:30:27 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void) :
+	ClapTrap("noname", 100, 50, 20)
+{
+	std::cout << "constructed " << *this << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name) :
+	ClapTrap(name, 100, 50, 20)
+{
+	std::cout << "constructed " << *this << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) :
+	ClapTrap(name, hitPoints, energyPoints, attackDamage)
+{
+	std::cout << "constructed " << *this << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const &other) :
+	ClapTrap(other)
+{
+	std::cout << "copy constructed " << *this << std::endl;
+}
+
+ScavTrap::~ScavTrap(void)
+{
+	std::cout << "deconstructed " << *this << std::endl;
+}
+
+std::ostream	&operator<<(std::ostream &os, ScavTrap const &st)
+{
+	os << "ScavTrap " << st.getName();
+	return (os);
+}
