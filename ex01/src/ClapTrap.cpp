@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 12:59:59 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 13:23:58 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -301,7 +301,7 @@ bool	ClapTrap::dead(void) const
  * @return true if the ClapTrap has no energy points remaining, false
  *         otherwise.
  */
-bool	ClapTrap::outOfMana(void) const
+bool	ClapTrap::outOfEnergy(void) const
 {
 	if (getEnergyPoints() > 0)
 		return (false);
@@ -321,7 +321,7 @@ bool	ClapTrap::outOfMana(void) const
  */
 bool	ClapTrap::takeAction(void)
 {
-	if (dead() || outOfMana())
+	if (dead() || outOfEnergy())
 		return (false);
 	setEnergyPoints(getEnergyPoints() - 1);
 	return (true);

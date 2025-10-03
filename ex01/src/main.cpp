@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:31:23 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 12:55:30 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 13:23:58 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	// test 4: Can't act when out of energy
-	while (!st3.outOfMana())
+	while (!st3.outOfEnergy())
 		st3.beRepaired(1);
 	st3.takeDamage(st3.getHitPoints());
 
