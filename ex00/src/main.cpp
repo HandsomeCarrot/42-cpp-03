@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:57 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/02 21:20:20 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 12:55:11 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,52 @@
 int main(void)
 {
 	// test 1: Basic attack and repair
-	ClapTrap robot1("Robot1");
-	ClapTrap robot2("Robot2");
-	ClapTrap robot3("Robot3");
+	ClapTrap ct1("ct1");
+	ClapTrap ct2("ct2");
+	ClapTrap ct3("ct3");
 
 	std::cout << std::endl;
 
-	robot1.attack(robot2.getName());
-	robot2.takeDamage(robot1.getAttackDamage());
+	ct1.attack(ct2.getName());
+	ct2.takeDamage(ct1.getAttackDamage());
 
-	robot2.beRepaired(5);
+	ct2.beRepaired(5);
 
 	std::cout << std::endl;
 
 	// test 2: Energy consumption
-	robot1.attack(robot2.getName());
-	robot1.attack(robot2.getName());
-	robot1.attack(robot2.getName());
+	ct1.attack(ct2.getName());
+	ct1.attack(ct2.getName());
+	ct1.attack(ct2.getName());
 
 	std::cout << std::endl;
 
 	// test 3: Can't act when dead
-	robot2.takeDamage(20); // Should kill robot2
-	robot2.attack(robot1.getName());
-	robot2.beRepaired(10);
+	ct2.takeDamage(ct2.getHitPoints());
+	ct2.attack(ct1.getName());
+	ct2.beRepaired(10);
 
 	std::cout << std::endl;
 
 	// test 4: Can't act when out of energy
-	for (size_t i = 0; i < 6; i++)
-	{
-		robot3.attack("no one");
-		robot3.beRepaired(1);
-	}
-	robot3.takeDamage(15);
+	while (!ct3.outOfMana())
+		ct3.beRepaired(1);
+	ct3.takeDamage(ct3.getHitPoints());
+
+	std::cout << std::endl;
+
+	//test 5: Copy dead ct and still can't act
+	ClapTrap ct4(ct2);
+	ct4.setName("ct4");
+	ct4.beRepaired(1);
+
+	std::cout << std::endl;
+
+	//test 6: assign dead ct and still can't act
+	ClapTrap ct5;
+	ct5 = ct2;
+	ct5.setName("ct5");
+	ct5.attack("you");
 
 	std::cout << std::endl;
 
