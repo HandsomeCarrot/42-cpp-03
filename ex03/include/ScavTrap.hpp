@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 14:06:48 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 14:15:19 by vpoka            ###   ########.fr       */
+/*   Created: 2025/10/02 16:55:38 by vpoka             #+#    #+#             */
+/*   Updated: 2025/10/03 17:29:42 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
 public:
 
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
-	FragTrap(FragTrap const &other);
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
+	ScavTrap(ScavTrap const &other);
 
-	~FragTrap(void);
+	~ScavTrap(void);
 
-	void	highFivesGuys(void);
+	void	attack(std::string const &target);
+	void	guardGate(void);
 };
 
-std::ostream	&operator<<(std::ostream &os, FragTrap const &st);
+std::ostream	&operator<<(std::ostream &os, ScavTrap const &st);
 
 #endif
