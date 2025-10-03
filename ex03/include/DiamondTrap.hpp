@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 16:36:26 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 17:37:03 by vpoka            ###   ########.fr       */
+/*   Created: 2025/10/03 17:09:01 by vpoka             #+#    #+#             */
+/*   Updated: 2025/10/03 17:30:16 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int	main(void)
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	DiamondTrap dt;
+private:
+public:
+	DiamondTrap(void);
 
-	std::cout << dt.getHitPoints() << " hit points" << std::endl;
+	~DiamondTrap(void);
+};
 
-	std::cout << dt.getEnergyPoints() << " energy points" << std::endl;
-
-	std::cout << dt.getAttackDamage() << " attack damage" << std::endl;
-
-	return (0);
-}
+#endif

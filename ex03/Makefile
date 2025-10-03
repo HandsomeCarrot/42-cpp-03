@@ -6,7 +6,7 @@
 #    By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 13:18:37 by vpoka             #+#    #+#              #
-#    Updated: 2025/10/03 17:06:24 by vpoka            ###   ########.fr        #
+#    Updated: 2025/10/03 17:33:44 by vpoka            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS =	$(addprefix $(S)/, \
 		main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
-		FragTrap.cpp)
+		FragTrap.cpp \
+		DiamondTrap.cpp)
 
 B = build
 OBJS = $(SRCS:$(S)/%.cpp=$(B)/%.o)
