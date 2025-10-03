@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:07:48 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 14:45:10 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 17:03:44 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << *this << " successfully high fived!" << std::endl;
+	std::cout << *this << " wants to high-five!" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, FragTrap const &st)
