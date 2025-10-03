@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:31:23 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 13:23:58 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 13:28:33 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ int	main(void)
 	st5 = st2;
 	st5.setName("st5");
 	st5.attack("you");
+
+	std::cout << std::endl;
+
+	//test 7: gate keeper mode
+	st1.guardGate();
 
 	std::cout << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:21 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 12:44:23 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/03 13:27:32 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ void	ScavTrap::attack(std::string const &target)
 	<< " attacks " << target
 	<< ", causing " << attackDamage
 	<< " points of damage!" << std::endl;
+}
+
+void	ScavTrap::guardGate(void)
+{
+	std::cout << *this << " is now in gate keeper mode" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, ScavTrap const &st)
