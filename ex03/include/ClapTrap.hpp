@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 13:23:58 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/04 13:38:17 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ private:
 	unsigned int	m_hitPoints;
 	unsigned int	m_energyPoints;
 	unsigned int	m_attackDamage;
+
+protected:
 
 	void	setHitPoints(unsigned int amount);
 	void	setEnergyPoints(unsigned int amount);
