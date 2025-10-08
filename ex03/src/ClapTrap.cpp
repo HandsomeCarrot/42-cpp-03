@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:34 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 13:23:58 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/08 17:25:59 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
  */
 ClapTrap::ClapTrap(void) :
 	m_name("noname"),
-	m_hitPoints(10),
-	m_energyPoints(10),
-	m_attackDamage(0)
+	m_hitPoints(DefaultHitPoints),
+	m_energyPoints(DefaultEnergyPoints),
+	m_attackDamage(DefaultAttackDamage)
 {
 	std::cout << "constructed " << *this << std::endl;
 }
@@ -40,9 +40,9 @@ ClapTrap::ClapTrap(void) :
  */
 ClapTrap::ClapTrap(std::string name) :
 	m_name(name),
-	m_hitPoints(10),
-	m_energyPoints(10),
-	m_attackDamage(0)
+	m_hitPoints(DefaultHitPoints),
+	m_energyPoints(DefaultEnergyPoints),
+	m_attackDamage(DefaultAttackDamage)
 {
 	std::cout << "constructed " << *this << std::endl;
 }

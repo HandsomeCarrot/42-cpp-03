@@ -6,20 +6,20 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:21 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 13:27:32 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/08 17:29:46 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) :
-	ClapTrap("noname", 100, 50, 20)
+	ClapTrap("noname", DefaultHitPoints, DefaultEnergyPoints, DefaultAttackDamage)
 {
 	std::cout << "constructed " << *this << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) :
-	ClapTrap(name, 100, 50, 20)
+	ClapTrap(name, DefaultHitPoints, DefaultEnergyPoints, DefaultAttackDamage)
 {
 	std::cout << "constructed " << *this << std::endl;
 }

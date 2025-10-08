@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:55:38 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/03 17:29:42 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/08 17:27:33 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-private:
+protected:
+
+	unsigned int static const	DefaultHitPoints = 100;
+	unsigned int static const	DefaultEnergyPoints = 50;
+	unsigned int static const	DefaultAttackDamage = 20;
+
 public:
 
 	ScavTrap(void);

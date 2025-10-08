@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:49:37 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/04 13:38:17 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/08 17:24:47 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ private:
 
 	std::string	m_name;
 
-	unsigned int	m_hitPoints;
+	unsigned int	m_hitPoints; 
 	unsigned int	m_energyPoints;
 	unsigned int	m_attackDamage;
 
 protected:
+
+	unsigned int static const DefaultHitPoints = 10;
+	unsigned int static const DefaultEnergyPoints = 10;
+	unsigned int static const DefaultAttackDamage = 0;
 
 	void	setHitPoints(unsigned int amount);
 	void	setEnergyPoints(unsigned int amount);
