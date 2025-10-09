@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:09:01 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/08 15:38:31 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:17:36 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	DiamondTrap(std::string name = "noname");
 
 	~DiamondTrap(void);
+
+	std::string	getName(void) const;
 };
+
+std::ostream	&operator<<(std::ostream &os, DiamondTrap const &dt);
 
 #endif

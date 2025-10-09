@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:10:04 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/08 17:35:28 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:18:35 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,21 @@ DiamondTrap::DiamondTrap(std::string name) :
 	this->setHitPoints(FragTrap::DefaultHitPoints);
 	this->setEnergyPoints(ScavTrap::DefaultEnergyPoints);
 	this->setAttackDamage(FragTrap::DefaultAttackDamage);
-	std::cout << "Diamond trap " << m_name << " constructed" << std::endl;
+	std::cout << *this << " constructed" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "Diamond trap" << " deconstructed" << std::endl;
+	std::cout << *this << " deconstructed" << std::endl;
+}
+
+std::string	DiamondTrap::getName(void) const
+{
+	return (this->m_name);
+}
+
+std::ostream	&operator<<(std::ostream &os, DiamondTrap const &dt)
+{
+	os << "DiamondTrap " << dt.getName();
+	return (os);
 }
