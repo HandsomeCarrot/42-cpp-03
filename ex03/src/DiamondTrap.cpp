@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:10:04 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/09 16:18:35 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:41:33 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ DiamondTrap::~DiamondTrap(void)
 std::string	DiamondTrap::getName(void) const
 {
 	return (this->m_name);
+}
+
+void	DiamondTrap::whoAmI(void)
+{
+	std::cout << "I am " << *this << " and " << (ClapTrap &)*this << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, DiamondTrap const &dt)

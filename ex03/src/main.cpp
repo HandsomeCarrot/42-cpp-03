@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:36:26 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/09 16:00:19 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:28:09 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int	main(void)
 {
 	DiamondTrap dt;
+
+	std::cout << std::endl;
+
+	dt.whoAmI();
 
 	std::cout << std::endl;
 

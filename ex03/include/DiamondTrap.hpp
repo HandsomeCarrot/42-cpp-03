@@ -6,7 +6,7 @@
 /*   By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:09:01 by vpoka             #+#    #+#             */
-/*   Updated: 2025/10/09 16:17:36 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:22:31 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ public:
 	~DiamondTrap(void);
 
 	std::string	getName(void) const;
+
+	void	whoAmI(void);
 };
 
 std::ostream	&operator<<(std::ostream &os, DiamondTrap const &dt);
