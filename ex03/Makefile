@@ -6,7 +6,7 @@
 #    By: vpoka <vpoka@student.42vienna.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 13:18:37 by vpoka             #+#    #+#              #
-#    Updated: 2025/10/03 17:33:44 by vpoka            ###   ########.fr        #
+#    Updated: 2025/10/09 16:57:39 by vpoka            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = ex03
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MD -MP
+CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -MD -MP
 
 INCLUDE = -Iinclude
 COMP = $(CXX) $(CXXFLAGS) $(INCLUDE)
